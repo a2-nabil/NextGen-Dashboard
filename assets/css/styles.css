@@ -45,7 +45,7 @@ ol {
     transform: rotate(315deg);
   }
 }
-/*# Dashboard Css Start  */
+/*# Dashboard Tab Css Start  */
 .a2n-nxt_dashboard {
   width: 100%;
   display: flex;
@@ -141,17 +141,6 @@ ol {
   max-width: 100%;
   height: 100%;
 }
-.a2n-nxt_dashboard .a2n_user_box .user_details {
-  font-family: "Poppins", sans-serif;
-}
-.a2n-nxt_dashboard .a2n_user_box .user_details h4,
-.a2n-nxt_dashboard .a2n_user_box .user_details h5 {
-  overflow: hidden;
-  height: auto;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
 .a2n-nxt_dashboard .a2n_user_box .a2n_tip {
   position: absolute;
   right: 0;
@@ -163,6 +152,17 @@ ol {
   font-family: "Poppins", sans-serif;
   font-size: 10px;
   font-weight: 500;
+}
+.a2n-nxt_dashboard .user_details {
+  font-family: "Poppins", sans-serif;
+}
+.a2n-nxt_dashboard .user_details h4,
+.a2n-nxt_dashboard .user_details h5 {
+  overflow: hidden;
+  height: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .a2n-nxt_dashboard .a2n-dash_container {
   background: #fbfbff;
@@ -306,7 +306,7 @@ ol {
 
 .a2n-dash_grid {
   display: grid;
-  grid-template-columns: repeat(13, 1fr);
+  grid-template-columns: repeat(14, 1fr);
   gap: 30px;
 }
 
@@ -345,7 +345,7 @@ ol {
   background: #e8fff4;
 }
 .a2n_dash_tabs .a2n_dash_card-3 {
-  grid-column: span 5;
+  grid-column: span 6;
   background: transparent;
 }
 .a2n_dash_tabs .a2n_dash_card-3 img {
@@ -443,10 +443,239 @@ ol {
   border: 1px solid #80cda7 !important;
 }
 
+/* #Dashboard tab css end */
+/* #Profile tab css Start */
+.a2n-section_container {
+  padding: 19px 0 35px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  background: #fff;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.06);
+}
+.a2n-section_container .a2n_p-head > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.a2n-user__container {
+  align-items: center;
+  margin-top: -50px;
+  padding: 0 72px;
+  gap: 40px !important;
+}
+.a2n-user__container .a2n-img_box {
+  grid-column: 1/2;
+  position: relative;
+}
+.a2n-user__container .a2n-img_box > img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 10px solid #70479b;
+  position: relative;
+}
+.a2n-user__container .a2n-img_option {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.a2n-user__container .a2n-img_option input {
+  width: 111px;
+  height: 40px;
+  visibility: hidden;
+  position: relative;
+}
+.a2n-user__container .a2n-img_option input::before {
+  content: url("/assets/images/profile tab img/change photo.svg");
+  position: absolute;
+  top: 0;
+  right: 15px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  visibility: visible;
+}
+.a2n-user__container .user_details {
+  grid-column: 2/15;
+  margin-top: 10px;
+}
+.a2n-user__container .user_details h4 {
+  font-family: "Poppins", sans-serif;
+  margin: 0 0 8px;
+  color: #2b354e;
+  font-size: 24px;
+  font-weight: 700;
+}
+.a2n-user__container .user_details h6 {
+  font-family: "Poppins", sans-serif;
+  color: #64748b;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.a2n_p-tab_section {
+  display: flex;
+  gap: 64px;
+  padding: 0 64px;
+  margin-top: 24px;
+}
+.a2n_p-tab_section .a2n_p-menu {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 32px 0 0;
+  border-right: 2px solid rgba(232, 234, 238, 0.4);
+}
+.a2n_p-tab_section .a2n_p-menu ul li a {
+  white-space: nowrap;
+  display: block;
+  padding: 12px;
+  margin: 24px 0;
+  color: #caced8;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.6px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.a2n_p-tab_section .a2n_p-menu ul li a.a2n_p-active, .a2n_p-tab_section .a2n_p-menu ul li a:hover {
+  background: #f1e9fa;
+  color: #083a50;
+}
+.a2n_p-tab_section .a2n_p-tabs__container {
+  width: -webkit-fill-available;
+}
+.a2n_p-tab_section .a2n_p-tabs__container .a2n-p_tab {
+  display: none;
+}
+.a2n_p-tab_section .a2n_p-tabs__container .a2n-p_tab.a2n-p_active-tab {
+  display: block;
+}
+
+.a2n-form_container > .form_title {
+  margin: 0 0 32px;
+  color: #caced8;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+.a2n-form_container form {
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 24px;
+  width: 100%;
+}
+.a2n-form_container form .form_group label {
+  margin: 0 0 8px;
+  display: block;
+  color: #2b354e;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.6px;
+}
+.a2n-form_container form .form_group input {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #caced8;
+  background: #fff;
+  color: #2b354e;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.6px;
+  padding: 12px;
+  outline: none;
+}
+.a2n-form_container form .form_group input::-moz-placeholder {
+  color: #caced8;
+}
+.a2n-form_container form .form_group input::placeholder {
+  color: #caced8;
+}
+.a2n-form_container form .form_group .a2n_error {
+  margin: 8px 0 0;
+  color: #f00;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 19.6px;
+}
+.a2n-form_container form .form_group .form_group_password {
+  position: relative;
+}
+.a2n-form_container form .form_group .form_group_password > i {
+  display: block;
+  color: #caced8;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.a2n-form_container form .form_group-1 {
+  grid-column: 1/8;
+}
+.a2n-form_container form .form_group-2 {
+  grid-column: 8/15;
+}
+.a2n-form_container form .form_group-3 {
+  grid-column: 1/15;
+}
+.a2n-form_container form .form_submit {
+  grid-column: 1/15;
+}
+.a2n-form_container form .form_submit input[type=submit] {
+  padding: 11px 43px;
+  border-radius: 8px;
+  border: 1px solid #70479b;
+  background: #70479b;
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.a2n-form_container form .form_submit input[type=submit]:hover {
+  background: transparent;
+  border: 1px solid #70479b;
+  color: #70479b;
+}
+
+#edit_profile form.a2n-dash_grid {
+  max-width: 713px;
+  padding-bottom: 150px;
+}
+
+#password_security form.a2n-dash_grid {
+  max-width: 517px;
+  padding-bottom: 27px;
+}
+#password_security form.a2n-dash_grid .form_group-1 {
+  grid-column: 1/15;
+}
+#password_security form.a2n-dash_grid .form_group-2 {
+  grid-column: 1/15;
+}
+#password_security form.a2n-dash_grid .form_submit {
+  margin-top: 8px;
+}
+
+/* #Profile tab css end */
 /*# responsive all css here */
 @media (min-width: 768px) {
   .a2n-nxt_sidebar {
-    height: 100%;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 999999;
   }
   .a2n-nxt_sidebar #a2n_nav-list {
     display: block !important;
@@ -454,8 +683,8 @@ ol {
 }
 @media (max-width: 1400px) {
   .a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_start .top_st_user {
-    width: 60px;
-    height: 50px;
+    width: auto;
+    height: auto;
   }
   .a2n-nxt_dashboard .a2n-dash_container .a2n_top-btn a {
     font-size: 14px;
@@ -492,6 +721,37 @@ ol {
   }
   .a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .user_details h5 {
     font-size: 8px;
+  }
+  .a2n-section_container .a2n_p-head > img {
+    height: 80px;
+  }
+  .a2n-user__container {
+    gap: 16px !important;
+    padding: 0 15px;
+    margin-top: -30px;
+  }
+  .a2n-user__container .a2n-img_box > img {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #70479b;
+  }
+  .a2n-user__container .a2n-img_box .a2n-img_option {
+    right: -15px;
+    bottom: -5px;
+  }
+  .a2n-user__container .a2n-img_box .a2n-img_option input::before {
+    width: auto;
+    height: auto;
+  }
+  .a2n-user__container .user_details {
+    margin-top: 20px;
+  }
+  .a2n-user__container .user_details h4 {
+    margin: 0px;
+    font-size: 18px;
+  }
+  .a2n-user__container .user_details h6 {
+    font-size: 12px;
   }
 }
 @media (max-width: 1024px) {
@@ -580,13 +840,13 @@ ol {
     justify-content: center;
   }
   .a2n-dash_grid .a2n_dash_card {
-    grid-column: 1/7;
+    grid-column: 1/8;
   }
   .a2n-dash_grid .a2n_dash_card-2 {
-    grid-column: 7/14;
+    grid-column: 8/15;
   }
   .a2n-dash_grid .a2n_dash_card-3 {
-    grid-column: span 13;
+    grid-column: span 14;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -606,5 +866,4 @@ ol {
     white-space: nowrap;
     font-size: 14px;
   }
-}
-/*# Dashboard Css Start  *//*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

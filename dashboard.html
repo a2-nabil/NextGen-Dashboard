@@ -11,14 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <!-- font awesome 4 cdn link here  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <!-- Custom Css Link Here  -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
@@ -378,18 +370,177 @@
 
         <!-- Profile Tab Start  -->
         <div id="a2n_profile" class="a2n_dash_tabs">
-
+          <div class="a2n-section_container">
+            <div class="a2n_p-head">
+              <img
+                src="./assets/images/profile tab img/header setting.webp"
+                alt=""
+              />
+            </div>
+            <div class="a2n-user__container a2n-dash_grid">
+              <div class="a2n-img_box">
+                <img src="./assets/images/Rectangle 37.webp" alt="" />
+                <div class="a2n-img_option">
+                  <input
+                    type="file"
+                    name="profile_image"
+                    id="profile_image"
+                    accept="image/*"
+                  />
+                </div>
+              </div>
+              <div class="user_details">
+                <h4>Emma Taylor</h4>
+                <h6>Your account is ready, you can now apply for advice.</h6>
+              </div>
+            </div>
+            <div class="a2n_p-tab_section">
+              <div class="a2n_p-menu">
+                <ul id="a2n_p-nav">
+                  <li>
+                    <a class="a2n_p-active" href="#edit_profile"
+                      >Edit Profile</a
+                    >
+                  </li>
+                  <li><a href="#password_security">Password & Security</a></li>
+                  <li><a href="#2FA">Preferences & 2FA</a></li>
+                </ul>
+              </div>
+              <div class="a2n_p-tabs__container">
+                <!-- edit profile tab start  -->
+                <div id="edit_profile" class="a2n-p_tab a2n-p_active-tab">
+                  <div class="a2n-form_container">
+                    <h2 class="form_title">Edit Profile</h2>
+                    <form class="a2n-dash_grid" action="#">
+                      <div class="form_group form_group-1">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name="first_name" id="first_name" />
+                      </div>
+                      <div class="form_group form_group-2">
+                        <label for="sur_name">Surname</label>
+                        <input type="text" name="sur_name" id="sur_name" />
+                      </div>
+                      <div class="form_group form_group-3">
+                        <label for="display_name">Display Name</label>
+                        <input
+                          type="text"
+                          name="display_name"
+                          id="display_name"
+                        />
+                      </div>
+                      <div class="form_submit">
+                        <input type="submit" value="Save" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- edit profile tab end   -->
+                <!-- Password & Security tab start  -->
+                <div id="password_security" class="a2n-p_tab">
+                  <div class="a2n-form_container">
+                    <h2 class="form_title">Update Password</h2>
+                    <form class="a2n-dash_grid" action="#">
+                      <div class="form_group form_group-1">
+                        <label for="current_password">Current Password</label>
+                        <div class="form_group_password">
+                          <input
+                            type="password"
+                            name="current_password"
+                            id="current_password"
+                            placeholder="Enter your current password"
+                          />
+                          <i
+                            id="current_password_toggler"
+                            class="fas fa-eye"
+                          ></i>
+                        </div>
+                      </div>
+                      <div class="form_group form_group-2">
+                        <label for="new_password">New Password</label>
+                        <div class="form_group_password">
+                          <input
+                            type="password"
+                            name="new_password"
+                            id="new_password"
+                            placeholder="Enter a new password"
+                          />
+                          <i id="new_password_toggler" class="fas fa-eye"></i>
+                        </div>
+                        <p class="a2n_error">*Please enter a new password</p>
+                      </div>
+                      <div class="form_group form_group-3">
+                        <label for="confirm_password">Confirm Password</label>
+                        <div class="form_group_password">
+                          <input
+                            type="password"
+                            name="confirm_password"
+                            id="confirm_password"
+                            placeholder="Type password to confirm"
+                          />
+                          <i
+                            id="confirm_password_toggler"
+                            class="fas fa-eye"
+                          ></i>
+                        </div>
+                      </div>
+                      <div class="form_submit">
+                        <input type="submit" value="Save" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- Password & Security tab end   -->
+                <!-- Preferences & 2FA tab start  -->
+                <div id="2FA" class="a2n-p_tab">
+                  <div class="a2n-form_container">
+                    <h2 class="form_title">Preferences & 2FA</h2>
+                    <form class="a2n-dash_grid" action="#">
+                      <div class="form_group">
+                        <label for="nxt_notification"
+                          >Receive reward notifications...</label
+                        >
+                        <input
+                          type="checkbox"
+                          name="nxt_notification"
+                          id="nxt_notification"
+                        />
+                      </div>
+                      <div class="form_group">
+                        <label for="fa_notification"
+                          >Enable 2FA (Two Factor Authentication) (we will email
+                          you a code when you sign in from a new
+                          device)...</label
+                        >
+                        <input
+                          type="checkbox"
+                          name="fa_notification"
+                          id="fa_notification"
+                        />
+                      </div>
+                      <div class="form_submit">
+                        <input type="submit" value="Save" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- Preferences & 2FA tab end   -->
+              </div>
+            </div>
+          </div>
         </div>
         <!-- Profile Tab End  -->
-        <div id="a2n_support" class="a2n_dash_tabs">
-          
-        </div>
+        <div id="a2n_support" class="a2n_dash_tabs"></div>
       </main>
     </div>
     <!-- Dashboard Area End  -->
 
     <!-- Js links Here  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- font awesome 5 here  -->
+    <script
+      src="https://kit.fontawesome.com/0793d75093.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/app.js"></script>
   </body>
 </html>
