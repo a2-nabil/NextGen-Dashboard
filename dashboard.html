@@ -153,18 +153,20 @@
         <!-- Dashboard Tab start  -->
         <div id="a2n_dashboard" class="a2n_dash_tabs a2n_active_tab">
           <div class="a2n-dash_grid">
-            <div class="a2n_dash_card">
-              <h2>53</h2>
-              <div class="course_count">
-                <h5>Enrolled Courses</h5>
-                <img src="./assets/images/Group.svg" alt="" />
+            <div class="dash_items">
+              <div class="a2n_dash_card a2n_dash_card-1">
+                <h2>53</h2>
+                <div class="course_count">
+                  <h5>Enrolled Courses</h5>
+                  <img src="./assets/images/Group.svg" alt="" />
+                </div>
               </div>
-            </div>
-            <div class="a2n_dash_card a2n_dash_card-2">
-              <h2>96</h2>
-              <div class="course_count">
-                <h5>Completed Courses</h5>
-                <img src="./assets/images/Group 1000004111.svg" alt="" />
+              <div class="a2n_dash_card a2n_dash_card-2">
+                <h2>96</h2>
+                <div class="course_count">
+                  <h5>Completed Courses</h5>
+                  <img src="./assets/images/Group 1000004111.svg" alt="" />
+                </div>
               </div>
             </div>
             <div class="a2n_dash_card-3">
@@ -403,7 +405,7 @@
                     >
                   </li>
                   <li><a href="#password_security">Password & Security</a></li>
-                  <li><a href="#2FA">Preferences & 2FA</a></li>
+                  <li><a href="#preferences">Preferences & 2FA</a></li>
                 </ul>
               </div>
               <div class="a2n_p-tabs__container">
@@ -491,14 +493,14 @@
                 </div>
                 <!-- Password & Security tab end   -->
                 <!-- Preferences & 2FA tab start  -->
-                <div id="2FA" class="a2n-p_tab">
+                <div id="preferences" class="a2n-p_tab">
                   <div class="a2n-form_container">
                     <h2 class="form_title">Preferences & 2FA</h2>
                     <form class="a2n-dash_grid" action="#">
                       <div class="form_group">
-                        <label for="nxt_notification"
-                          >Receive reward notifications...</label
-                        >
+                        <h3 class="a2n_notification">
+                          Receive reward notifications...
+                        </h3>
                         <input
                           type="checkbox"
                           name="nxt_notification"
@@ -506,11 +508,10 @@
                         />
                       </div>
                       <div class="form_group">
-                        <label for="fa_notification"
-                          >Enable 2FA (Two Factor Authentication) (we will email
-                          you a code when you sign in from a new
-                          device)...</label
-                        >
+                        <h3 class="a2n_notification">
+                          Enable 2FA (Two Factor Authentication) (we will email
+                          you a code when you sign in from a new device)...
+                        </h3>
                         <input
                           type="checkbox"
                           name="fa_notification"
@@ -529,6 +530,33 @@
           </div>
         </div>
         <!-- Profile Tab End  -->
+        <!-- My courses Tab Start  -->
+        <div id="a2n_courses" class="a2n_dash_tabs">
+          <div class="a2n-dash_grid">
+            <div class="a2n_dash_card a2n_dash_card-1">
+              <h2>53</h2>
+              <div class="course_count">
+                <h5>Enrolled Courses</h5>
+                <img src="./assets/images/Group.svg" alt="" />
+              </div>
+            </div>
+            <div class="a2n_dash_card a2n_dash_card-2">
+              <h2>96</h2>
+              <div class="course_count">
+                <h5>Completed Courses</h5>
+                <img src="./assets/images/Group 1000004111.svg" alt="" />
+              </div>
+            </div>
+            <div class="a2n_dash_card a2n_dash_card-3">
+              <h2>96</h2>
+              <div class="course_count">
+                <h5>Completed Courses</h5>
+                <img src="./assets/images/Group 1000004111.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- My courses Tab End  -->
         <div id="a2n_support" class="a2n_dash_tabs"></div>
       </main>
     </div>
