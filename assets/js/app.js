@@ -41,14 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const nxtNavList = document.getElementById("a2n_nav-list");
   const nxtTabs = document.querySelectorAll(".a2n_dash_tabs");
   const nxtNavLinks = document.querySelectorAll("#a2n_nav-list li a");
-  const pTabs = document.querySelectorAll(".a2n-p_tab");
-  const pNavLinks = document.querySelectorAll("#a2n_p-nav li a");
+  // const pTabs = document.querySelectorAll(".a2n-p_tab");
+  // const pNavLinks = document.querySelectorAll("#a2n_p-nav li a");
 
   nxtNavbarToggle.addEventListener("click", function () {
     nxtNavList.classList.toggle("a2n_show_nav");
     nxtNavbarToggle.classList.toggle("a2n_nav_active");
   });
 
+  // this function for main tabs and navs toggle 
   nxtNavLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
       event.preventDefault();
@@ -72,26 +73,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // profile section tab
-  pNavLinks.forEach(function (plink) {
-    plink.addEventListener("click", function (event) {
-      event.preventDefault();
-      pNavLinks.forEach(function (pNavLink) {
-        if (pNavLink !== plink) {
-          pNavLink.classList.remove("a2n_p-active");
-        }
-      });
-      plink.classList.add("a2n_p-active");
-      const targetTabId = this.getAttribute("href").substring(1);
-      changeProfileTab(targetTabId);
-    });
-  });
+  // common function for tab sections
+  function setupTabNavigation(navLinksSelector, tabsSelector, navActiveClass, tabsActiveClass) {
+    const navLinks = document.querySelectorAll(navLinksSelector);
+    const tabs = document.querySelectorAll(tabsSelector);
 
-  function changeProfileTab(ptabId) {
-    pTabs.forEach((tab) => tab.classList.remove("a2n-p_active-tab"));
-    const selectedTab = document.getElementById(ptabId);
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        navLinks.forEach(function (navLink) {
+          if (navLink !== link) {
+            navLink.classList.remove(navActiveClass);
+          }
+        });
+        link.classList.add(navActiveClass);
+        const targetTabId = this.getAttribute("href").substring(1);
+        switchTab(targetTabId, tabs, tabsActiveClass);
+      });
+    });
+  }
+
+  function switchTab(tabId, tabs, tabsActiveClass) {
+    tabs.forEach((tab) => tab.classList.remove(tabsActiveClass));
+    const selectedTab = document.getElementById(tabId);
     if (selectedTab) {
-      selectedTab.classList.add("a2n-p_active-tab");
+      selectedTab.classList.add(tabsActiveClass);
     }
   }
+
+  // profile tab 
+  setupTabNavigation("#a2n_p-nav li a", ".a2n-p_tab", "a2n_p-active", "a2n-p_active-tab");
+  // courses tab 
+  setupTabNavigation("#a2n_c-nav li a", ".a2n-c_tab", "a2n_c-active", "a2n-c_active-tab");
+  
 });
