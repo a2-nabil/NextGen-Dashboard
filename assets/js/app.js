@@ -1,5 +1,4 @@
 //  for password show - hide
-
 const currentPassword = document.getElementById("current_password");
 const currentPasswordToggler = document.getElementById(
   "current_password_toggler"
@@ -41,30 +40,59 @@ document.addEventListener("DOMContentLoaded", function () {
   const nxtNavList = document.getElementById("a2n_nav-list");
   const nxtTabs = document.querySelectorAll(".a2n_dash_tabs");
   const nxtNavLinks = document.querySelectorAll("#a2n_nav-list li a");
-  // const pTabs = document.querySelectorAll(".a2n-p_tab");
-  // const pNavLinks = document.querySelectorAll("#a2n_p-nav li a");
+  const nxtUserNavLinks = document.querySelectorAll(".a2n_user_log ul li a");
 
   nxtNavbarToggle.addEventListener("click", function () {
     nxtNavList.classList.toggle("a2n_show_nav");
     nxtNavbarToggle.classList.toggle("a2n_nav_active");
   });
 
-  // this function for main tabs and navs toggle 
+  // Function to remove active class from all nav links
+  function removeActiveClass() {
+    nxtNavLinks.forEach(function (navLink) {
+      navLink.classList.remove("a2n_active");
+    });
+    nxtUserNavLinks.forEach(function (userNavLink) {
+      userNavLink.classList.remove("a2n_active");
+    });
+  }
+
+  // Event listener for navigation links
   nxtNavLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
       event.preventDefault();
-      nxtNavLinks.forEach(function (navLink) {
-        if (navLink !== link) {
-          navLink.classList.remove("a2n_active");
-        }
-      });
+      removeActiveClass();
       link.classList.add("a2n_active");
       nxtNavList.classList.remove("a2n_show_nav");
       nxtNavbarToggle.classList.remove("a2n_nav_active");
       const targetTabId = this.getAttribute("href").substring(1);
       changeTab(targetTabId);
+      const correspondingUserLink = document.querySelector(
+        `.a2n_user_log ul li a[href="#${targetTabId}"]`
+      );
+      if (correspondingUserLink) {
+        correspondingUserLink.classList.add("a2n_active");
+      }
     });
   });
+
+  // Event listener for user navigation links
+  nxtUserNavLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      removeActiveClass();
+      link.classList.add("a2n_active");
+      const targetTabId = this.getAttribute("href").substring(1);
+      changeTab(targetTabId);
+      const correspondingNavLink = document.querySelector(
+        `#a2n_nav-list li a[href="#${targetTabId}"]`
+      );
+      if (correspondingNavLink) {
+        correspondingNavLink.classList.add("a2n_active");
+      }
+    });
+  });
+
   function changeTab(tabId) {
     nxtTabs.forEach((tab) => tab.classList.remove("a2n_active_tab"));
     const selectedTab = document.getElementById(tabId);
@@ -74,7 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // common function for tab sections
-  function setupTabNavigation(navLinksSelector, tabsSelector, navActiveClass, tabsActiveClass) {
+  function setupTabNavigation(
+    navLinksSelector,
+    tabsSelector,
+    navActiveClass,
+    tabsActiveClass
+  ) {
     const navLinks = document.querySelectorAll(navLinksSelector);
     const tabs = document.querySelectorAll(tabsSelector);
 
@@ -101,9 +134,40 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // profile tab 
-  setupTabNavigation("#a2n_p-nav li a", ".a2n-p_tab", "a2n_p-active", "a2n-p_active-tab");
-  // courses tab 
-  setupTabNavigation("#a2n_c-nav li a", ".a2n-c_tab", "a2n_c-active", "a2n-c_active-tab");
-  
+  // for top nav
+  function updateActiveTabLink(tabId, navLinksSelector, navActiveClass) {
+    const navLinks = document.querySelectorAll(navLinksSelector);
+    navLinks.forEach(function (link) {
+      if (link.getAttribute("href") === "#" + tabId) {
+        navLinks.forEach(function (navLink) {
+          if (navLink !== link) {
+            navLink.classList.remove(navActiveClass);
+          }
+        });
+        link.classList.add(navActiveClass);
+      }
+    });
+  }
+
+  // profile tab
+  setupTabNavigation(
+    "#a2n_p-nav li a",
+    ".a2n-p_tab",
+    "a2n_p-active",
+    "a2n-p_active-tab"
+  );
+  // courses tab
+  setupTabNavigation(
+    "#a2n_c-nav li a",
+    ".a2n-c_tab",
+    "a2n_c-active",
+    "a2n-c_active-tab"
+  );
+  // Top Nav tab
+  setupTabNavigation(
+    ".a2n_user_log li a",
+    ".a2n_dash_tabs",
+    "a2n-active",
+    "a2n_active_tab"
+  );
 });

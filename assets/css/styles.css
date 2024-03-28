@@ -239,6 +239,7 @@ ol {
   border-radius: 0;
 }
 .a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user {
+  position: relative;
   width: 100%;
   max-width: 300px;
   height: 53px;
@@ -269,6 +270,7 @@ ol {
   font-weight: 400;
 }
 .a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .icon_box {
+  display: block;
   width: 39px;
   height: 39px;
   position: relative;
@@ -279,6 +281,48 @@ ol {
   width: 14.5px;
   height: 14.5px;
   background: #fe7e41;
+}
+.a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .a2n_user_log {
+  transform: all 0.4s ease;
+  display: none;
+  position: absolute;
+  top: 46px;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: auto;
+}
+.a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .a2n_user_log ul {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 20px 70px 0px rgba(86, 89, 146, 0.1);
+}
+.a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .a2n_user_log ul li a {
+  width: 100%;
+  display: inline-block;
+  padding: 10px 25px;
+  font-family: "Poppins", sans-serif;
+  color: #2b354e;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+.a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .a2n_user_log ul li a i {
+  margin-right: 10px;
+}
+.a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .a2n_user_log ul li a.a2n_active {
+  color: #70479b;
+}
+.a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .a2n_user_log ul li a:hover {
+  background: #70479b;
+  box-shadow: 0px 15px 65px 0px rgba(112, 71, 155, 0.3);
+  color: #fff;
+}
+.a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user:hover .a2n_user_log {
+  display: block;
 }
 .a2n-nxt_dashboard .a2n-dash_container .a2n_top-btn {
   margin: 40px 0;
@@ -1022,6 +1066,13 @@ ol {
   }
 }
 @media (max-width: 1024px) {
+  .a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .a2n_user_log ul li a {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+  .a2n-nxt_dashboard .a2n-dash_container .a2n_top_nav .top_end .a2n_end_user .a2n_user_log ul li a i {
+    margin-right: 5px;
+  }
   .a2n-nxt_dashboard .a2n-dash_container .a2n_top-btn {
     margin: 30px 0;
   }
