@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // common function for tab sections
+  // common functions for tab sections
   function setupTabNavigation(
     navLinksSelector,
     tabsSelector,
@@ -133,22 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedTab.classList.add(tabsActiveClass);
     }
   }
-
-  // for top nav
-  function updateActiveTabLink(tabId, navLinksSelector, navActiveClass) {
-    const navLinks = document.querySelectorAll(navLinksSelector);
-    navLinks.forEach(function (link) {
-      if (link.getAttribute("href") === "#" + tabId) {
-        navLinks.forEach(function (navLink) {
-          if (navLink !== link) {
-            navLink.classList.remove(navActiveClass);
-          }
-        });
-        link.classList.add(navActiveClass);
-      }
-    });
-  }
-
   // profile tab
   setupTabNavigation(
     "#a2n_p-nav li a",
@@ -162,12 +146,5 @@ document.addEventListener("DOMContentLoaded", function () {
     ".a2n-c_tab",
     "a2n_c-active",
     "a2n-c_active-tab"
-  );
-  // Top Nav tab
-  setupTabNavigation(
-    ".a2n_user_log li a",
-    ".a2n_dash_tabs",
-    "a2n-active",
-    "a2n_active_tab"
   );
 });
