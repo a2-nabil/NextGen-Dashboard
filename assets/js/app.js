@@ -57,6 +57,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Function to set active tab based on hash in URL
+  function setActiveTabFromHash() {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      nxtTabs.forEach((tab) => tab.classList.remove("a2n_active_tab"));
+      const selectedTab = document.getElementById(hash);
+      if (selectedTab) {
+        selectedTab.classList.add("a2n_active_tab");
+        const correspondingNavLink = document.querySelector(
+          `#a2n_nav-list li a[href="#${hash}"]`
+        );
+        if (correspondingNavLink) {
+          correspondingNavLink.classList.add("a2n_active");
+        }
+      }
+      const correspondingUserNavLink = document.querySelector(
+        `.a2n_user_log ul li a[href="#${hash}"]`
+      );
+      if (correspondingUserNavLink) {
+        correspondingUserNavLink.classList.add("a2n_active");
+      }
+    } else {
+      // If no hash is present, activate the first tab by default
+      const firstTab = nxtTabs[0];
+      if (firstTab) {
+        firstTab.classList.add("a2n_active_tab");
+        const firstNavLink = nxtNavLinks[0];
+        if (firstNavLink) {
+          firstNavLink.classList.add("a2n_active");
+        }
+      }
+    }
+  }
+
   // Event listener for navigation links
   nxtNavLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
@@ -66,13 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
       nxtNavList.classList.remove("a2n_show_nav");
       nxtNavbarToggle.classList.remove("a2n_nav_active");
       const targetTabId = this.getAttribute("href").substring(1);
+      window.location.hash = targetTabId;
       changeTab(targetTabId);
-      const correspondingUserLink = document.querySelector(
-        `.a2n_user_log ul li a[href="#${targetTabId}"]`
-      );
-      if (correspondingUserLink) {
-        correspondingUserLink.classList.add("a2n_active");
-      }
     });
   });
 
@@ -83,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       removeActiveClass();
       link.classList.add("a2n_active");
       const targetTabId = this.getAttribute("href").substring(1);
+      window.location.hash = targetTabId;
       changeTab(targetTabId);
       const correspondingNavLink = document.querySelector(
         `#a2n_nav-list li a[href="#${targetTabId}"]`
@@ -92,6 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Set active tab on page load
+  setActiveTabFromHash();
 
   function changeTab(tabId) {
     nxtTabs.forEach((tab) => tab.classList.remove("a2n_active_tab"));
@@ -133,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedTab.classList.add(tabsActiveClass);
     }
   }
+
   // profile tab
   setupTabNavigation(
     "#a2n_p-nav li a",

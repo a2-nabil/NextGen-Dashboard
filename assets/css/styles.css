@@ -288,7 +288,7 @@ ol {
   position: absolute;
   top: 46px;
   left: 0;
-  z-index: 9999;
+  z-index: 99;
   width: 100%;
   height: auto;
 }
@@ -389,22 +389,22 @@ ol {
   grid-column: span 3;
 }
 
-#a2n_dashboard .dash_items {
+#my_dashboard .dash_items {
   grid-column: span 7;
   display: flex;
   gap: 30px;
 }
-#a2n_dashboard .dash_items .a2n_dash_card {
+#my_dashboard .dash_items .a2n_dash_card {
   flex-basis: calc(50% - 15px);
 }
-#a2n_dashboard .a2n_dash_card-2 {
+#my_dashboard .a2n_dash_card-2 {
   background: #e8fff4;
 }
-#a2n_dashboard .a2n_dash_card-3 {
+#my_dashboard .a2n_dash_card-3 {
   grid-column: span 5;
   background: transparent;
 }
-#a2n_dashboard .a2n_dash_card-3 img {
+#my_dashboard .a2n_dash_card-3 img {
   width: 100%;
   max-width: 100%;
   height: 100%;
@@ -777,9 +777,7 @@ ol {
 .a2n-course__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  row-gap: 30px;
-  -moz-column-gap: 55px;
-       column-gap: 55px;
+  gap: 30px;
 }
 
 .a2n-course__card {
@@ -787,6 +785,8 @@ ol {
   border: 1.072px solid #c3d4eb;
   background: #fff;
   padding: 5px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .a2n-course__card .a2n-course__thumbnail a {
   display: block;
@@ -826,6 +826,8 @@ ol {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  position: relative;
+  z-index: 10;
 }
 .a2n-course__card .a2n-course__content .a2n-course__title a {
   color: #2b354e;
@@ -880,51 +882,51 @@ ol {
   font-size: inherit !important;
 }
 
-#a2n_courses .a2n_dash_card-2 {
+#my_courses .a2n_dash_card-2 {
   background: #fff6dd;
 }
-#a2n_courses .a2n_dash_card-3 {
+#my_courses .a2n_dash_card-3 {
   background: #e8fff4;
 }
-#a2n_courses .a2n_c-tab_section {
+#my_courses .a2n_c-tab_section {
   margin-top: 60px;
 }
-#a2n_courses #a2n_c-nav {
+#my_courses #a2n_c-nav {
   display: flex;
   align-items: center;
   gap: 24px;
   margin-bottom: 28px;
 }
-#a2n_courses #a2n_c-nav li a {
+#my_courses #a2n_c-nav li a {
   color: #a7b4c7;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-weight: 500;
   transition: all 0.3s ease;
 }
-#a2n_courses #a2n_c-nav li a.a2n_c-active, #a2n_courses #a2n_c-nav li a:hover {
+#my_courses #a2n_c-nav li a.a2n_c-active, #my_courses #a2n_c-nav li a:hover {
   color: #2b354e;
   font-weight: 600;
   text-decoration-line: underline;
 }
-#a2n_courses .a2n-c_tab {
+#my_courses .a2n-c_tab {
   display: none;
 }
-#a2n_courses .a2n-c_active-tab {
+#my_courses .a2n-c_active-tab {
   display: block;
 }
 
-#enrolled_courses {
+.a2n-c_tab {
   position: relative;
   border-radius: 11.4px;
   overflow: hidden;
 }
-#enrolled_courses .a2n-course__grid {
+.a2n-c_tab .a2n-course__grid {
   overflow-y: scroll;
   height: 557px;
   scrollbar-width: none;
 }
-#enrolled_courses::before {
+.a2n-c_tab::before {
   content: "";
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 160.5%);
   position: absolute;
@@ -933,7 +935,7 @@ ol {
   height: 100px;
 }
 
-#ongoing_courses .a2n-course__grid {
+.a2n-c_tab .a2n-course__grid {
   gap: 30px;
 }
 
@@ -943,18 +945,18 @@ ol {
 
 /* #My courses Tab End */
 /* #Saved courses Tab Start */
-#a2n_saved_courses {
+#my_saved_courses {
   position: relative;
   border-radius: 11.4px;
   overflow: hidden;
   margin-bottom: 70px;
 }
-#a2n_saved_courses .a2n-course__grid {
+#my_saved_courses .a2n-course__grid {
   overflow-y: scroll;
   max-height: 850px;
   scrollbar-width: none;
 }
-#a2n_saved_courses::before {
+#my_saved_courses::before {
   content: "";
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 17.5%, #000 121%);
   position: absolute;
@@ -1098,10 +1100,10 @@ ol {
   .a2n-dash_grid .a2n_dash_card .course_count img {
     width: 14px;
   }
-  #a2n_dashboard .dash_items {
+  #my_dashboard .dash_items {
     gap: 16px;
   }
-  #a2n_dashboard .dash_items .a2n_dash_card {
+  #my_dashboard .dash_items .a2n_dash_card {
     flex-basis: calc(50% - 8px);
   }
   .a2n-dash_course_container {
@@ -1121,7 +1123,7 @@ ol {
     display: flex;
     align-items: center;
   }
-  #a2n_courses #a2n_c-nav li a {
+  #my_courses #a2n_c-nav li a {
     font-size: 14px;
   }
 }
@@ -1179,10 +1181,10 @@ ol {
   .a2n-dash_grid {
     justify-content: center;
   }
-  #a2n_dashboard .dash_items {
+  #my_dashboard .dash_items {
     grid-column: 1/13;
   }
-  #a2n_dashboard .a2n_dash_card-3 {
+  #my_dashboard .a2n_dash_card-3 {
     grid-column: 1/13;
   }
   .a2n_p-tab_section .a2n_p-menu {
@@ -1197,10 +1199,10 @@ ol {
   .a2n-course__grid {
     grid-template-columns: repeat(1, 1fr);
   }
-  #a2n_courses #a2n_c-nav {
+  #my_courses #a2n_c-nav {
     gap: 10px;
   }
-  #a2n_courses #a2n_c-nav li a {
+  #my_courses #a2n_c-nav li a {
     font-size: 10px;
   }
 }

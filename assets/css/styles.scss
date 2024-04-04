@@ -291,7 +291,7 @@ ol {
             position: absolute;
             top: 46px;
             left: 0;
-            z-index: 9999;
+            z-index: 99;
             width: 100%;
             height: auto;
             ul {
@@ -399,7 +399,7 @@ ol {
     grid-column: span 3;
   }
 }
-#a2n_dashboard {
+#my_dashboard {
   .dash_items {
     grid-column: span 7;
     display: flex;
@@ -800,14 +800,14 @@ ol {
 .a2n-course__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  row-gap: 30px;
-  column-gap: 55px;
+  gap: 30px;
 }
 .a2n-course__card {
   border-radius: 11.403px;
   border: 1.072px solid #c3d4eb;
   background: #fff;
   padding: 5px;
+  height: fit-content;
   .a2n-course__thumbnail {
     a {
       display: block;
@@ -848,6 +848,8 @@ ol {
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      position: relative;
+      z-index: 10;
       a {
         color: #2b354e;
         transition: 0.3s ease;
@@ -907,7 +909,7 @@ ol {
     font-size: inherit !important;
   }
 }
-#a2n_courses {
+#my_courses {
   .a2n_dash_card-2 {
     background: #fff6dd;
   }
@@ -945,7 +947,7 @@ ol {
     display: block;
   }
 }
-#enrolled_courses {
+.a2n-c_tab {
   position: relative;
   border-radius: 11.4px;
   overflow: hidden;
@@ -967,7 +969,7 @@ ol {
     height: 100px;
   }
 }
-#ongoing_courses {
+.a2n-c_tab {
   .a2n-course__grid {
     gap: 30px;
   }
@@ -977,7 +979,7 @@ ol {
 }
 /* #My courses Tab End */
 /* #Saved courses Tab Start */
-#a2n_saved_courses {
+#my_saved_courses {
   position: relative;
   border-radius: 11.4px;
   overflow: hidden;
@@ -1183,7 +1185,7 @@ ol {
       }
     }
   }
-  #a2n_dashboard {
+  #my_dashboard {
     .dash_items {
       gap: 16px;
       .a2n_dash_card {
@@ -1208,7 +1210,7 @@ ol {
       }
     }
   }
-  #a2n_courses {
+  #my_courses {
     #a2n_c-nav {
       li {
         a {
@@ -1282,7 +1284,7 @@ ol {
   .a2n-dash_grid {
     justify-content: center;
   }
-  #a2n_dashboard {
+  #my_dashboard {
     .dash_items {
       grid-column: 1/13;
     }
@@ -1308,7 +1310,7 @@ ol {
   .a2n-course__grid {
     grid-template-columns: repeat(1, 1fr);
   }
-  #a2n_courses {
+  #my_courses {
     #a2n_c-nav {
       gap: 10px;
       li {
