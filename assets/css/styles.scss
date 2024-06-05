@@ -13,6 +13,14 @@ ul,
 ol {
   list-style: none;
 }
+:root {
+  --a2n-primary-color: #70479b;
+  --a2n-secondary-color: #2b354e;
+  --a2n-btn-bg: linear-gradient(180deg, var(--a2n-primary-color) 0%, #3d1666 100%);
+
+  --a2n-primary-font: "Poppins", sans-serif;
+
+}
 /*# dashboard animatin keyframes for course progress  */
 @keyframes load1 {
   0% {
@@ -53,7 +61,7 @@ ol {
   width: 100%;
   display: flex;
   .a2n-nxt_sidebar {
-    background: #2b354e;
+    background: var(--a2n-secondary-color);
     width: 100%;
     max-width: 270px;
     padding: 12px;
@@ -70,7 +78,7 @@ ol {
           padding: 14px 10px 14px 36px;
           gap: 30px;
           margin: 12px 0;
-          font-family: "Poppins", sans-serif;
+          font-family: var(--a2n-primary-font);
           color: #fff;
           font-size: 16px;
           font-weight: 600;
@@ -78,7 +86,7 @@ ol {
           border-radius: 10px;
           &.a2n_active,
           &:hover {
-            background: #70479b;
+            background: var(--a2n-primary-color);
             box-shadow: 0px 15px 65px 0px rgba(112, 71, 155, 0.3);
           }
         }
@@ -152,13 +160,13 @@ ol {
       justify-content: center;
       align-items: center;
       color: #f8f8ff;
-      font-family: "Poppins", sans-serif;
+      font-family: var(--a2n-primary-font);
       font-size: 10px;
       font-weight: 500;
     }
   }
   .user_details {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--a2n-primary-font);
     h4,
     h5 {
       overflow: hidden;
@@ -187,7 +195,7 @@ ol {
           h4 {
             margin: 0;
             font-family: inherit;
-            color: #70479b;
+            color: var(--a2n-primary-color);
             font-size: 26px;
             font-weight: 400;
             letter-spacing: 0.52px;
@@ -224,8 +232,8 @@ ol {
               outline: none;
               border: none;
               padding: 15px 22px;
-              color: #2b354e;
-              font-family: "Poppins", sans-serif;
+              color: var(--a2n-secondary-color);
+              font-family: var(--a2n-primary-font);
               font-size: 15px;
               font-weight: 400;
               &::placeholder {
@@ -262,7 +270,7 @@ ol {
           }
           .user_details {
             h4 {
-              color: #2b354e;
+              color: var(--a2n-secondary-color);
               font-size: 16px;
               font-weight: 700;
             }
@@ -305,8 +313,8 @@ ol {
                   width: 100%;
                   display: inline-block;
                   padding: 10px 25px;
-                  font-family: "Poppins", sans-serif;
-                  color: #2b354e;
+                  font-family: var(--a2n-primary-font);
+                  color: var(--a2n-secondary-color);
                   font-size: 16px;
                   font-weight: 600;
                   transition: all 0.3s ease;
@@ -315,10 +323,10 @@ ol {
                     margin-right: 10px;
                   }
                   &.a2n_active {
-                    color: #70479b;
+                    color: var(--a2n-primary-color);
                   }
                   &:hover {
-                    background: #70479b;
+                    background: var(--a2n-primary-color);
                     box-shadow: 0px 15px 65px 0px rgba(112, 71, 155, 0.3);
                     color: #fff;
                   }
@@ -341,11 +349,11 @@ ol {
         display: block;
         color: #fffb9f;
         text-align: center;
-        font-family: "Poppins", sans-serif;
+        font-family: var(--a2n-primary-font);
         font-size: 23px;
         font-weight: 500;
         border-radius: 10px;
-        background: linear-gradient(180deg, #70479b 0%, #3d1666 100%);
+        background: var(--a2n-btn-bg);
         i {
           margin-left: 20px;
         }
@@ -376,8 +384,8 @@ ol {
   justify-content: center;
   align-items: center;
   h2 {
-    color: #2b354e;
-    font-family: "Poppins", sans-serif;
+    color: var(--a2n-secondary-color);
+    font-family: var(--a2n-primary-font);
     font-size: 56px;
     font-weight: 700;
   }
@@ -388,7 +396,7 @@ ol {
     gap: 10px;
     h5 {
       color: #64748b;
-      font-family: "Poppins", sans-serif;
+      font-family: var(--a2n-primary-font);
       font-size: 24px;
       font-weight: 600;
     }
@@ -435,9 +443,9 @@ ol {
   .a2n_course-card {
     > h3 {
       margin: 0 0 10px;
-      color: #2b354e;
+      color: var(--a2n-secondary-color);
       text-align: center;
-      font-family: "Poppins", sans-serif;
+      font-family: var(--a2n-primary-font);
       font-size: 28px;
       font-weight: 700;
     }
@@ -483,11 +491,11 @@ ol {
         justify-content: center;
         border-radius: 50%;
         h2 {
-          color: #2b354e;
+          color: var(--a2n-secondary-color);
           text-align: center;
           -webkit-text-stroke-width: 1.0713196992874146px;
-          -webkit-text-stroke-color: #2b354e;
-          font-family: "Poppins", sans-serif;
+          -webkit-text-stroke-color: var(--a2n-secondary-color);
+          font-family: var(--a2n-primary-font);
           font-size: 36px;
           font-weight: 600;
           span {
@@ -545,7 +553,7 @@ ol {
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      border: 10px solid #70479b;
+      border: 10px solid var(--a2n-primary-color);
       position: relative;
     }
   }
@@ -574,14 +582,14 @@ ol {
     grid-column: 2/15;
     margin-top: 10px;
     h4 {
-      font-family: "Poppins", sans-serif;
+      font-family: var(--a2n-primary-font);
       margin: 0 0 8px;
-      color: #2b354e;
+      color: var(--a2n-secondary-color);
       font-size: 24px;
       font-weight: 700;
     }
     h6 {
-      font-family: "Poppins", sans-serif;
+      font-family: var(--a2n-primary-font);
       color: #64748b;
       font-size: 18px;
       font-weight: 500;
@@ -605,7 +613,7 @@ ol {
           padding: 12px;
           margin: 24px 0;
           color: #caced8;
-          font-family: "Poppins", sans-serif;
+          font-family: var(--a2n-primary-font);
           font-size: 16px;
           font-weight: 700;
           line-height: 19.6px;
@@ -634,7 +642,7 @@ ol {
   > .form_title {
     margin: 0 0 32px;
     color: #caced8;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--a2n-primary-font);
     font-size: 24px;
     font-weight: 700;
   }
@@ -647,8 +655,8 @@ ol {
       .a2n_notification {
         margin: 0 0 8px;
         display: block;
-        color: #2b354e;
-        font-family: "Poppins", sans-serif;
+        color: var(--a2n-secondary-color);
+        font-family: var(--a2n-primary-font);
         font-size: 16px;
         font-weight: 700;
         line-height: 19.6px;
@@ -659,8 +667,8 @@ ol {
         border-radius: 8px;
         border: 1px solid #caced8;
         background: #fff;
-        color: #2b354e;
-        font-family: "Poppins", sans-serif;
+        color: var(--a2n-secondary-color);
+        font-family: var(--a2n-primary-font);
         font-size: 16px;
         font-weight: 400;
         line-height: 19.6px;
@@ -673,7 +681,7 @@ ol {
       .a2n_error {
         margin: 8px 0 0;
         color: #f00;
-        font-family: "Poppins", sans-serif;
+        font-family: var(--a2n-primary-font);
         font-size: 12px;
         font-weight: 500;
         line-height: 19.6px;
@@ -705,11 +713,11 @@ ol {
       input[type="submit"] {
         padding: 11px 43px;
         border-radius: 8px;
-        border: 1px solid #70479b;
-        background: #70479b;
+        border: 1px solid var(--a2n-primary-color);
+        background: var(--a2n-primary-color);
         color: #fff;
         text-align: center;
-        font-family: "Poppins", sans-serif;
+        font-family: var(--a2n-primary-font);
         font-size: 16px;
         font-weight: 700;
         line-height: 19.6px;
@@ -717,8 +725,8 @@ ol {
         transition: all 0.3s ease-in-out;
         &:hover {
           background: transparent;
-          border: 1px solid #70479b;
-          color: #70479b;
+          border: 1px solid var(--a2n-primary-color);
+          color: var(--a2n-primary-color);
         }
       }
     }
@@ -851,7 +859,7 @@ ol {
       position: relative;
       z-index: 10;
       a {
-        color: #2b354e;
+        color: var(--a2n-secondary-color);
         transition: 0.3s ease;
       }
     }
@@ -927,13 +935,13 @@ ol {
     li {
       a {
         color: #a7b4c7;
-        font-family: "Poppins", sans-serif;
+        font-family: var(--a2n-primary-font);
         font-size: 20px;
         font-weight: 500;
         transition: all 0.3s ease;
         &.a2n_c-active,
         &:hover {
-          color: #2b354e;
+          color: var(--a2n-secondary-color);
           font-weight: 600;
           text-decoration-line: underline;
         }
@@ -1101,7 +1109,7 @@ ol {
       > img {
         width: 100px;
         height: 100px;
-        border: 5px solid #70479b;
+        border: 5px solid var(--a2n-primary-color);
       }
       .a2n-img_option {
         right: -15px;
